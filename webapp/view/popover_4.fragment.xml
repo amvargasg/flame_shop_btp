@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.manageProducts.controller.popover_4" xmlns="sap.m">
+    <Popover bounce="false" contentHeight="auto" contentWidth="130px" horizontalScrolling="false" modal="false" offsetX="0" offsetY="0" placement="Right" showHeader="false" title="Title" verticalScrolling="false" visible="true">
+        <content>
+            <Button text="Send Email" type="Transparent" icon="sap-icon://email" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+            <Button text="Save as Tile" type="Transparent" icon="sap-icon://add-favorite" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </content>
+        <beginButton/>
+        <customHeader/>
+        <endButton/>
+        <footer/>
+        <subHeader/>
+    </Popover>
+</core:FragmentDefinition>

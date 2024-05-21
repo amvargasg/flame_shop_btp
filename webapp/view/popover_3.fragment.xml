@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.manageProducts.controller.popover_3" xmlns="sap.m">
+    <Popover bounce="false" contentHeight="auto" contentWidth="250px" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Right" showHeader="false" title="Title" verticalScrolling="true" visible="true">
+        <content>
+            <List id="sap_m_Popover_2-content-sap_m_List-1489999785056" mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" itemPress="_onListItemPress" items="{path:'/ChartTypesSet', templateShareable:true}">
+                <infoToolbar>
+                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                        <content>
+                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </content>
+                    </Toolbar>
+                </infoToolbar>
+                <headerToolbar>
+                    <Toolbar enabled="true" visible="true" width="" design="Solid">
+                        <content>
+                            <SearchField placeholder="Search in Chart Types" showSearchButton="true" visible="true" width="100%" liveChange="_onSearchFieldLiveChange"/>
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <StandardListItem icon="{Icon}" title="{ID}" description="" info="" infoState="None" type="Active" selected="false" visible="true"/>
+                </items>
+            </List>
+        </content>
+        <beginButton/>
+        <customHeader/>
+        <endButton/>
+        <footer/>
+        <subHeader/>
+    </Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,158 @@
+{
+    "_version": "1.8.0",
+    "sap.app": {
+        "_version": "1.3.0",
+        "id": "com.sap.build.standard.manageProducts",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.2.2"
+        },
+        "dataSources": {
+            "local": {
+                "uri": "/here/goes/your/serviceUrl/local/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "ach": "ach",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "ui5template.basicSAPUI5ApplicationProject",
+            "version": "1.32.0",
+            "toolsId": "8fd46cc8-5360-4114-a897-9d481d8c9f2a"
+        }
+    },
+    "sap.ui": {
+        "_version": "1.3.0",
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "_version": "1.3.0",
+        "rootView": {
+            "viewName": "generated.app.view.page_2",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.50.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "": {
+                "dataSource": "local",
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "loadMetadataAsync": false,
+                    "json": true,
+                    "bJSON": true,
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "useBatch": true,
+                    "refreshAfterChange": false,
+                    "disableHeadRequestForToken": true
+                }
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "com.sap.build.standard.manageProducts.view",
+                "controlId": "App",
+                "clearTarget": false,
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": [
+                        "page_3"
+                    ]
+                }
+            },
+            "targets": {
+                "page_1": {
+                    "controlAggregation": "pages",
+                    "viewName": "page_1",
+                    "viewId": "page_1",
+                    "viewLevel": 1,
+                    "transition": "slide"
+                },
+                "page_3": {
+                    "controlAggregation": "pages",
+                    "viewName": "page_3",
+                    "viewId": "page_3",
+                    "viewLevel": 3,
+                    "transition": "slide"
+                },
+                "page_2": {
+                    "controlAggregation": "pages",
+                    "viewName": "page_2",
+                    "viewId": "page_2",
+                    "viewLevel": 2,
+                    "transition": "slide"
+                }
+            },
+            "routes": [
+                {
+                    "pattern": "page_3/:context:",
+                    "name": "page_3",
+                    "target": [
+                        "page_3"
+                    ]
+                },
+                {
+                    "pattern": "",
+                    "name": "default",
+                    "target": [
+                        "page_3"
+                    ]
+                },
+                {
+                    "pattern": "page_2/:context:",
+                    "name": "page_2",
+                    "target": [
+                        "page_2"
+                    ]
+                },
+                {
+                    "pattern": "page_1/:context:",
+                    "name": "page_1",
+                    "target": [
+                        "page_1"
+                    ]
+                }
+            ]
+        }
+    }
+}

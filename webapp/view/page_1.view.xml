@@ -1,0 +1,132 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.manageProducts.controller.page_1" xmlns:f="sap.f" xmlns:variants="sap.ui.comp.variants" xmlns="sap.m" xmlns:filterbar="sap.ui.comp.filterbar" xmlns:core="sap.ui.core">
+    <f:DynamicPage headerExpanded="true" showFooter="false" class="sapUiSizeCompact">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <variants:VariantManagement/>
+                </f:heading>
+                <f:actions>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://action" type="Transparent"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <f:content>
+                    <filterbar:FilterBar id="ListReportFilterBar" useToolbar="false" showGoOnFB="true" searchEnabled="true">
+                        <filterbar:filterItems>
+                            <filterbar:FilterItem label="Editing Statuses" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-sap_ui_comp_filterbar_FilterItem-1489995636150---0">
+                                <filterbar:control>
+                                    <ComboBox selectedKey="All" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+                                        <items>
+                                            <core:Item text="Item" enabled="true" key="Item"/>
+                                        </items>
+                                    </ComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                            <filterbar:FilterItem label="Supplier" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_StandardFilter-1---0">
+                                <filterbar:control>
+                                    <MultiInput/>
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                            <filterbar:FilterItem label="Category" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1489995623522---0">
+                                <filterbar:control>
+                                    <MultiComboBox>
+                                        <items>
+                                            <core:Item key="" text=""/>
+                                        </items>
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                        </filterbar:filterItems>
+                    </filterbar:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <VBox fitContainer="true">
+                <items>
+                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="MultiSelect" itemPress="_onFioriListReportTableItemPress" updateFinished="_onFioriListReportTableUpdateFinished" items="{path:'/ProductSet', templateShareable:true}">
+                        <headerToolbar>
+                            <OverflowToolbar design="Transparent">
+                                <content>
+                                    <Title textAlign="Begin" text="Products"/>
+                                    <Title text="(1)"/>
+                                    <ToolbarSpacer/>
+                                    <Button text="Copy" iconFirst="false" type="Transparent" enabled="true">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button text="Delete" iconFirst="false" type="Transparent" enabled="true" press="_onFioriListReportActionButtonPress">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button text="" icon="sap-icon://add" iconFirst="true" type="Transparent" enabled="true">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button icon="sap-icon://action-settings" type="Transparent">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                </content>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column width="64.65000000px" hAlign="Left" vAlign="Top" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Imagen"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Referencia" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                <header>
+                                    <Text text="Nombre" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Desktop" demandPopin="true">
+                                <header>
+                                    <Text text="Categoria" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Tipo" width="auto"/>
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem type="Navigation">
+                                <cells>
+                                    <Image src="{ProductImage}" height="auto" width="50px" visible="true" densityAware="false"/>
+                                    <Link text="{ID}" press="_onFioriListReportUrlColumnPress"/>
+                                    <ObjectStatus text="{Name}" width="auto"/>
+                                    <ObjectStatus text="{Category}" width="auto"/>
+                                    <ObjectStatus text="{MainCategory}" width="auto"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </items>
+            </VBox>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

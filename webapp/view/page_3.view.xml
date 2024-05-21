@@ -1,0 +1,220 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.manageProducts.controller.page_3" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="true" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{Name}" objectSubtitle="{ID}" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Product"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Save" iconFirst="false" type="Transparent" enabled="true" press="_onFioriObjectPageActionButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="Copy" iconFirst="false" type="Transparent" enabled="true" press="_onFioriObjectPageActionButtonPress1">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="" icon="sap-icon://action" iconFirst="true" type="Transparent" enabled="true" press="_onFioriObjectPageActionButtonPress2">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Header">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Header">
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                                <layout:content>
+                                    <form:Form>
+                                        <form:layout>
+                                            <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                                        </form:layout>
+                                        <form:formContainers>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Name" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Input value="{Name}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Product" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Link text="{Name}" press="_onFioriObjectPageUrlFormElementPress"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Category" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ComboBox selectedKey="{MainCategory}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/MainCategoriesSet', templateShareable:true}">
+                                                                <items>
+                                                                    <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                                                </items>
+                                                            </ComboBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Sub-Category" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <Input value="{Category}" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Supplier" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/SupplierSet', templateShareable:true}">
+                                                                <items>
+                                                                    <core:Item text="{Name}" enabled="true" key="{Name}"/>
+                                                                </items>
+                                                            </ComboBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Description" required="true"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <TextArea value="{EnglishDescription/Description}" rows="3" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Availability" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ObjectStatus text="{StockLevel}"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Price per Unit" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                                                <items>
+                                                                    <Input value="{path: 'Price', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                    <Text text="" width="10px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <Input value="{Currency}" type="Text" showValueHelp="true" enabled="true" visible="true" width="80px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                </items>
+                                                                <layoutData/>
+                                                            </HBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                        </form:formContainers>
+                                    </form:Form>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Materiales">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Materiales">
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                                <layout:content>
+                                    <form:Form>
+                                        <form:layout>
+                                            <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                                        </form:layout>
+                                        <form:formContainers>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Estampado" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                                                <items>
+                                                                    <Input value="{Width}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                    <Text text="" width="10px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <ComboBox selectedKey="{WidthUnit}" editable="true" enabled="true" visible="true" width="80px" valueState="None" maxWidth="100%" items="{path:'/LenghtUnitsSet', templateShareable:true}">
+                                                                        <items>
+                                                                            <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                                                        </items>
+                                                                    </ComboBox>
+                                                                </items>
+                                                                <layoutData/>
+                                                            </HBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Tela" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                                                <items>
+                                                                    <Input value="{Length}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                                    <Text text="" width="10px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <ComboBox selectedKey="{LengthUnit}" editable="true" enabled="true" visible="true" width="80px" valueState="None" maxWidth="100%" items="{path:'/LenghtUnitsSet', templateShareable:true}">
+                                                                        <items>
+                                                                            <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                                                        </items>
+                                                                    </ComboBox>
+                                                                </items>
+                                                                <layoutData/>
+                                                            </HBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                        </form:formContainers>
+                                    </form:Form>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

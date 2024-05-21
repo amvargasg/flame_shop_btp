@@ -1,0 +1,241 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.manageProducts.controller.page_2" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:chart="sap.chart" xmlns:data="sap.chart.data">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{Name}" objectSubtitle="{ID}" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="{ProductImage}">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Product"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Edit" iconFirst="false" type="Emphasized" enabled="true" press="_onFioriObjectPageActionButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="Delete" iconFirst="false" type="Transparent" enabled="true" press="_onFioriObjectPageActionButtonPress1">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="Copy" iconFirst="false" type="Transparent" enabled="true" press="_onFioriObjectPageActionButtonPress2">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="" icon="sap-icon://action" iconFirst="true" type="Transparent" enabled="true" press="_onFioriObjectPageActionButtonPress3">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent>
+            <VBox>
+                <items>
+                    <Image src="{ProductImage}" class="sapUxAPObjectPageHeaderObjectImage sapSmartTemplatesObjectPageHeaderImage" width="6rem" height="6rem" visible="{path:'ProductImage', formatter:'.formatImageVisibilityFromImageSource'}"/>
+                    <core:Icon src="{ProductImage}" class="sapUxAPObjectPageHeaderObjectImage sapSmartTemplatesObjectPageHeaderImage" size="6rem" width="6rem" height="6rem" visible="{path:'ProductImage', formatter:'.formatIconVisibilityFromImageSource'}"/>
+                </items>
+            </VBox>
+            <VBox>
+                <items>
+                    <HBox>
+                        <items>
+                            <Label text="Category"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text="{MainCategory}"/>
+                        </items>
+                    </HBox>
+                    <HBox>
+                        <items>
+                            <Label text="Sub-Category"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text="{Category}"/>
+                        </items>
+                    </HBox>
+                </items>
+            </VBox>
+            <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <Title text="Description" titleStyle="H4" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                    <Text text="{EnglishDescription/Description}" width="245.640625px" maxLines="4" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                </items>
+                <layoutData/>
+            </VBox>
+        </uxap:headerContent>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Materiales">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Materiales">
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                                <layout:content>
+                                    <form:Form>
+                                        <form:layout>
+                                            <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                                        </form:layout>
+                                        <form:formContainers>
+                                            <form:FormContainer title="">
+                                                <form:formElements>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Estampado" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ObjectStatus text="{Width}"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="Tela" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ObjectStatus text="{Length}"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement>
+                                                        <form:label>
+                                                            <Label text="" required="false"/>
+                                                        </form:label>
+                                                        <form:fields>
+                                                            <ObjectStatus text="{StockLevel}"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                        </form:formContainers>
+                                    </form:Form>
+                                </layout:content>
+                            </layout:Grid>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Detalle">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Detalle">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="None" items="{path:'Reviews', templateShareable:true}">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" hAlign="Left" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Review Date"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Disponibilidad" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Cantidad Disponible" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Precio" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Disminuir Stock"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Aumentar Stock"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <Text text="{Size}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <ObjectStatus text="{StockLevel}" state="{path:'StockLevelCC', formatter:'.formatStateFromCriticality'}" icon="{path:'StockLevelCC', formatter:'.formatIconFromCriticality'}"/>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="{path:'Quantity', formatter:'.formatFractionDigitFromValue'}" unit="" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="{path:'Price', formatter:'.formatFractionDigitFromValue'}" unit="{Currency}" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <Button text="Vender" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                                            <Button text="Agregar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Sales Data">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Sales Data">
+                        <uxap:blocks>
+                            <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                <items>
+                                    <OverflowToolbar width="100%" design="Transparent" visible="true" enabled="true">
+                                        <content>
+                                            <Title text="Year / Month" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                                            <ToolbarSpacer width=""/>
+                                            <OverflowToolbarButton text="DrillDown" type="Transparent" icon="sap-icon://drill-down" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress"/>
+                                            <OverflowToolbarButton text="Legend" type="Transparent" icon="sap-icon://legend" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress1"/>
+                                            <OverflowToolbarButton text="ZoomIn" type="Transparent" icon="sap-icon://zoom-in" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress2"/>
+                                            <OverflowToolbarButton text="ZoomOut" type="Transparent" icon="sap-icon://zoom-out" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress3"/>
+                                            <OverflowToolbarButton text="FullScreen" type="Transparent" icon="sap-icon://full-screen" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress4"/>
+                                            <OverflowToolbarButton text="Vertical" type="Emphasized" icon="sap-icon://vertical-bar-chart" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress5"/>
+                                        </content>
+                                    </OverflowToolbar>
+                                    <chart:Chart id="Fiori_ObjectPage_ObjectPage_0-sections-Fiori_ObjectPage_Section-1489998041435-sectionContent-sap_m_VBox-1489998099163-items-sap_chart_ColumnChart-1490000879535" width="100%" height="450px" visibleDimensions="Year,__metadata/uri" visibleMeasures="Revenue" vizProperties="{staticDataModel>/Fiori_ObjectPage_ObjectPage_0-sections-Fiori_ObjectPage_Section-1489998041435-sectionContent-sap_m_VBox-1489998099163-items-sap_chart_ColumnChart-1490000879535/vizProperties}" chartType="column" selectionMode="Single" uiConfig="{}">
+                                        <chart:dimensions>
+                                            <data:Dimension name="Year" label="Year" role="category"/>
+                                            <data:Dimension name="__metadata/uri" label="Month" role="category" textProperty="Month"/>
+                                        </chart:dimensions>
+                                        <chart:measures>
+                                            <data:Measure name="Revenue" label="Revenue" role="axis2"/>
+                                        </chart:measures>
+                                    </chart:Chart>
+                                </items>
+                                <layoutData/>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

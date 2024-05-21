@@ -1,0 +1,37 @@
+{
+    "dataBinding": {
+        "/webapp/view/page_3.view.xml": {
+            "entitySet": "/ProductSet"
+        }, 
+        "/webapp/view/page_2.view.xml": {
+            "entitySet": "/ProductSet"
+        }, 
+        "/webapp/view/page_1.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Popover3.view.xml": {
+            "entitySet": "/ChartTypesSet"
+        }, 
+        "/webapp/view/Popover4.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Popover2.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Popover1.view.xml": {
+            "entitySet": "/ProductSet"
+        }, 
+        "/webapp/view/popover_4.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/popover_3.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/popover_2.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/popover_1.view.xml": {
+            "entitySet": "/ProductSet"
+        } 
+    }
+}

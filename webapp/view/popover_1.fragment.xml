@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.manageProducts.controller.popover_1" xmlns="sap.m">
+    <Popover bounce="false" contentHeight="115px" contentWidth="250px" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Right" showHeader="true" title="{Name}" verticalScrolling="true" visible="true">
+        <content>
+            <Text text="Text" width="1px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+            <VBox alignItems="Start" direction="Column" fitContainer="true" width="auto" renderType="Div" visible="true" height="auto">
+                <items>
+                    <HBox alignItems="Start" direction="Row" fitContainer="true" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                        <items>
+                            <Text text="" width="15px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Link text="Manage Products" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false" press="_onLinkPress"/>
+                        </items>
+                        <layoutData/>
+                    </HBox>
+                    <HBox alignItems="Start" direction="Row" fitContainer="true" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                        <items>
+                            <Text text="" width="15px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Link text="Product Quick Create" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false" press="_onLinkPress1"/>
+                        </items>
+                        <layoutData/>
+                    </HBox>
+                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                        <items>
+                            <Text text="" width="15px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Link text="Product Quick View" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false" press="_onLinkPress2"/>
+                        </items>
+                        <layoutData/>
+                    </HBox>
+                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                        <items>
+                            <Text text="" width="15px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Link text="Shop" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false" press="_onLinkPress3"/>
+                        </items>
+                        <layoutData/>
+                    </HBox>
+                </items>
+                <layoutData/>
+            </VBox>
+        </content>
+        <beginButton/>
+        <customHeader/>
+        <endButton/>
+        <footer/>
+        <subHeader/>
+    </Popover>
+</core:FragmentDefinition>

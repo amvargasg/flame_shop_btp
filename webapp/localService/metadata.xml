@@ -1,0 +1,278 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="32364328f261fb091afce574" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="32364328f261fb091afce574_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ProductSet" EntityType="32364328f261fb091afce574.Product" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="ProductEnglishDescriptionDescription" Association="32364328f261fb091afce574.ProductEnglishDescriptionDescription" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductEnglishDescriptionDescription"/>
+                    <End EntitySet="DescriptionSet" Role="ToRole_ProductEnglishDescriptionDescription"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductContactsContact" Association="32364328f261fb091afce574.ProductContactsContact" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductContactsContact"/>
+                    <End EntitySet="ContactSet" Role="ToRole_ProductContactsContact"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductDescriptionsDescription" Association="32364328f261fb091afce574.ProductDescriptionsDescription" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductDescriptionsDescription"/>
+                    <End EntitySet="DescriptionSet" Role="ToRole_ProductDescriptionsDescription"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductReviewsReview" Association="32364328f261fb091afce574.ProductReviewsReview" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductReviewsReview"/>
+                    <End EntitySet="ReviewSet" Role="ToRole_ProductReviewsReview"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductChartDataChartData" Association="32364328f261fb091afce574.ProductChartDataChartData" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductChartDataChartData"/>
+                    <End EntitySet="ChartDataSet" Role="ToRole_ProductChartDataChartData"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductSupplierSupplier" Association="32364328f261fb091afce574.ProductSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_ProductSupplierSupplier"/>
+                </AssociationSet>
+                <EntitySet Name="SupplierSet" EntityType="32364328f261fb091afce574.Supplier" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ContactSet" EntityType="32364328f261fb091afce574.Contact" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="DescriptionSet" EntityType="32364328f261fb091afce574.Description" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ReviewSet" EntityType="32364328f261fb091afce574.Review" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="ReviewProductProduct" Association="32364328f261fb091afce574.ReviewProductProduct" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ReviewSet" Role="FromRole_ReviewProductProduct"/>
+                    <End EntitySet="ProductSet" Role="ToRole_ReviewProductProduct"/>
+                </AssociationSet>
+                <EntitySet Name="EditStatusesSet" EntityType="32364328f261fb091afce574.EditStatuses" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="AvailabilitySet" EntityType="32364328f261fb091afce574.Availability" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="PriceRangesSet" EntityType="32364328f261fb091afce574.PriceRanges" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="MainCategoriesSet" EntityType="32364328f261fb091afce574.MainCategories" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ChartDataSet" EntityType="32364328f261fb091afce574.ChartData" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="DrillPathsSet" EntityType="32364328f261fb091afce574.DrillPaths" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ChartTypesSet" EntityType="32364328f261fb091afce574.ChartTypes" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="LenghtUnitsSet" EntityType="32364328f261fb091afce574.LenghtUnits" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="WeightUnitsSet" EntityType="32364328f261fb091afce574.WeightUnits" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="Product">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="Category" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Category"/>
+                <Property Name="Price" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Price"/>
+                <Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+                <Property Name="MainCategory" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MainCategory"/>
+                <Property Name="Length" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Length"/>
+                <Property Name="LengthUnit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LengthUnit"/>
+                <Property Name="Width" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Width"/>
+                <Property Name="WidthUnit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WidthUnit"/>
+                <Property Name="Height" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Height"/>
+                <Property Name="HeightUnit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="HeightUnit"/>
+                <Property Name="Weight" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Weight"/>
+                <Property Name="WeightUnit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WeightUnit"/>
+                <Property Name="ProductImage" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ProductImage"/>
+                <Property Name="StockLevel" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StockLevel"/>
+                <Property Name="StockLevelCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StockLevelCC"/>
+                <Property Name="PriceRange" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PriceRange"/>
+                <Property Name="___FK_7bf081fc826214da0d9259f8" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="From.Product"/>
+                <Property Name="AverageRating" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Review\&quot;,\&quot;entityId\&quot;:\&quot;Review\&quot;,\&quot;navPropName\&quot;:\&quot;Reviews\&quot;,\&quot;navPropId\&quot;:\&quot;Reviews\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;mean\&quot;,\&quot;propertyName\&quot;:\&quot;Price\&quot;,\&quot;propertyId\&quot;:\&quot;Price\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:0,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;Reviews&quot;,&quot;entityId&quot;:&quot;Review&quot;,&quot;propertyId&quot;:&quot;Price&quot;}]}" sap:label="AverageRating"/>
+                <NavigationProperty Name="EnglishDescription" Relationship="32364328f261fb091afce574.ProductEnglishDescriptionDescription" FromRole="FromRole_ProductEnglishDescriptionDescription" ToRole="ToRole_ProductEnglishDescriptionDescription"/>
+                <NavigationProperty Name="Contacts" Relationship="32364328f261fb091afce574.ProductContactsContact" FromRole="FromRole_ProductContactsContact" ToRole="ToRole_ProductContactsContact"/>
+                <NavigationProperty Name="Descriptions" Relationship="32364328f261fb091afce574.ProductDescriptionsDescription" FromRole="FromRole_ProductDescriptionsDescription" ToRole="ToRole_ProductDescriptionsDescription"/>
+                <NavigationProperty Name="Reviews" Relationship="32364328f261fb091afce574.ProductReviewsReview" FromRole="FromRole_ProductReviewsReview" ToRole="ToRole_ProductReviewsReview"/>
+                <NavigationProperty Name="ChartData" Relationship="32364328f261fb091afce574.ProductChartDataChartData" FromRole="FromRole_ProductChartDataChartData" ToRole="ToRole_ProductChartDataChartData"/>
+                <NavigationProperty Name="Supplier" Relationship="32364328f261fb091afce574.ProductSupplierSupplier" FromRole="FromRole_ProductSupplierSupplier" ToRole="ToRole_ProductSupplierSupplier"/>
+            </EntityType>
+            <Association Name="ProductEnglishDescriptionDescription">
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="FromRole_ProductEnglishDescriptionDescription"/>
+                <End Type="32364328f261fb091afce574.Description" Multiplicity="1" Role="ToRole_ProductEnglishDescriptionDescription"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_ProductEnglishDescriptionDescription">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_ProductEnglishDescriptionDescription">
+                        <PropertyRef Name="___FK_7bf081fc826214da0d9259f8"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ProductContactsContact">
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="FromRole_ProductContactsContact"/>
+                <End Type="32364328f261fb091afce574.Contact" Multiplicity="*" Role="ToRole_ProductContactsContact"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductContactsContact">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductContactsContact">
+                        <PropertyRef Name="___FK_bb90a807d77a465c0d9259f8"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ProductDescriptionsDescription">
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="FromRole_ProductDescriptionsDescription"/>
+                <End Type="32364328f261fb091afce574.Description" Multiplicity="*" Role="ToRole_ProductDescriptionsDescription"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductDescriptionsDescription">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductDescriptionsDescription">
+                        <PropertyRef Name="___FK_93c0f124cb110a070d9259f8"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ProductReviewsReview">
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="FromRole_ProductReviewsReview"/>
+                <End Type="32364328f261fb091afce574.Review" Multiplicity="*" Role="ToRole_ProductReviewsReview"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductReviewsReview">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductReviewsReview">
+                        <PropertyRef Name="___FK_43c4d69ec85a1d400d9259f8"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ProductChartDataChartData">
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="FromRole_ProductChartDataChartData"/>
+                <End Type="32364328f261fb091afce574.ChartData" Multiplicity="*" Role="ToRole_ProductChartDataChartData"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductChartDataChartData">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductChartDataChartData">
+                        <PropertyRef Name="___FK_9ece8a0f5d1142d20d9259f8"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ProductSupplierSupplier">
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="FromRole_ProductSupplierSupplier"/>
+                <End Type="32364328f261fb091afce574.Supplier" Multiplicity="*" Role="ToRole_ProductSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductSupplierSupplier">
+                        <PropertyRef Name="___FK_c77cdd3effd3a0db1b057c05_00001"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Supplier">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="email"/>
+                <Property Name="Phone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+                <Property Name="URI" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="URI"/>
+                <Property Name="___FK_c77cdd3effd3a0db1b057c05_00001" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_c77cdd3effd3a0db1b057c05_00001"/>
+            </EntityType>
+            <EntityType Name="Contact">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="FullName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="FullName"/>
+                <Property Name="Role" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Role"/>
+                <Property Name="Photo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Photo"/>
+                <Property Name="JobTitle" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="JobTitle"/>
+                <Property Name="Department" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Department"/>
+                <Property Name="Email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Email"/>
+                <Property Name="Phone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+                <Property Name="Mobile" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Mobile"/>
+                <Property Name="Fax" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Fax"/>
+                <Property Name="___FK_bb90a807d77a465c0d9259f8" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="From.Product"/>
+            </EntityType>
+            <EntityType Name="Description">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+                <Property Name="Language" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Language"/>
+                <Property Name="LanguageCode" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LanguageCode"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="___FK_93c0f124cb110a070d9259f8" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="From.Product"/>
+            </EntityType>
+            <EntityType Name="Review">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Price" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Rating"/>
+                <Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Reviewer"/>
+                <Property Name="Size" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ReviewDate"/>
+                <Property Name="StockLevel" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ReviewText"/>
+                <Property Name="___FK_43c4d69ec85a1d400d9259f8" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="From.Product"/>
+                <Property Name="___FK_4c5a0f16e74aa5980d92b2c8" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_4c5a0f16e74aa5980d92b2c8"/>
+                <Property Name="StockLevelCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StockLevelCC"/>
+                <Property Name="Quantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Quantity"/>
+                <NavigationProperty Name="Product" Relationship="32364328f261fb091afce574.ReviewProductProduct" FromRole="FromRole_ReviewProductProduct" ToRole="ToRole_ReviewProductProduct"/>
+            </EntityType>
+            <Association Name="ReviewProductProduct">
+                <End Type="32364328f261fb091afce574.Review" Multiplicity="1" Role="FromRole_ReviewProductProduct"/>
+                <End Type="32364328f261fb091afce574.Product" Multiplicity="1" Role="ToRole_ReviewProductProduct"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_ReviewProductProduct">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_ReviewProductProduct">
+                        <PropertyRef Name="___FK_4c5a0f16e74aa5980d92b2c8"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="EditStatuses">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="Availability">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="PriceRanges">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="MainCategories">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="MainCategory" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MainCategory"/>
+            </EntityType>
+            <EntityType Name="ChartData">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Month" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Month"/>
+                <Property Name="Year" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Year"/>
+                <Property Name="Revenue" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Revenue"/>
+                <Property Name="___FK_9ece8a0f5d1142d20d9259f8" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="From.Product"/>
+            </EntityType>
+            <EntityType Name="DrillPaths">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="ChartTypes">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Icon" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Icon"/>
+            </EntityType>
+            <EntityType Name="LenghtUnits">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="WeightUnits">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
